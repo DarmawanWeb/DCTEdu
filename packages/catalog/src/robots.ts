@@ -186,8 +186,8 @@ export const robots: readonly Robot[] = [
       'A modular robot you can rebuild into anything',
     ),
     summary: l(
-      'Momo dirakit dari modul tanpa solder. Pasang sensor garis 5-in-1 untuk lomba line follower, radar ultrasonik di atas servo untuk menghindari rintangan, atau sensor suhu dan mikrofon untuk proyek IoT. Otaknya ESP32 dengan Wi-Fi.',
-      'Momo is built from modules without soldering. Fit the 5-in-1 line array for line-follower contests, the ultrasonic radar on its servo to dodge obstacles, or the temperature sensor and microphone for IoT projects. Its brain is an ESP32 with Wi-Fi.',
+      'Sensor Momo tinggal dicolok ke konektor di atas board lalu diprogram: plug and code, tanpa solder. Pasang sensor garis 5-in-1 untuk lomba line follower, radar ultrasonik di atas servo untuk menghindari rintangan, atau sensor suhu dan mikrofon untuk proyek IoT. Otaknya ESP32 dengan Wi-Fi.',
+      'Momo’s sensors plug into the connectors on top of its board, then you code them: plug and code, no soldering. Fit the 5-in-1 line array for line-follower contests, the ultrasonic radar on its servo to dodge obstacles, or the temperature sensor and microphone for IoT projects. Its brain is an ESP32 with Wi-Fi.',
     ),
     age: 11,
     level: 'menengah',
@@ -210,10 +210,10 @@ export const robots: readonly Robot[] = [
       ),
     ],
     build: {
-      label: l('Rakit modular', 'Modular build'),
+      label: l('Plug and code', 'Plug and code'),
       body: l(
-        'Modul dipasang lewat PCB dan konektor berkunci, tanpa solder. Bongkar dan rakit lagi dalam bentuk lain kapan saja.',
-        'Modules connect through a PCB and keyed connectors, with no soldering. Take it apart and rebuild it another way whenever you like.',
+        'Setiap sensor punya dudukan sendiri dan dicolok ke konektor berkunci di board, tanpa solder. Cabut, pasang sensor lain, lalu program lagi kapan saja.',
+        'Every sensor has its own mount and plugs into a keyed connector on the board, with no soldering. Unplug it, fit another, and program it again whenever you like.',
       ),
     },
     controller: 'ESP32-WROOM',
@@ -234,10 +234,7 @@ export const robots: readonly Robot[] = [
       {
         group: l('Gerak', 'Motion'),
         items: [
-          l(
-            'Sasis aluminium 2WD, dua motor DC dan roda',
-            'Aluminium 2WD chassis, two DC motors and wheels',
-          ),
+          l('Sasis 2WD, dua motor DC dan roda', '2WD chassis, two DC motors and wheels'),
           l('Driver motor TB6612FNG', 'TB6612FNG motor driver'),
           l('Servo untuk gerak tambahan', 'Servo for an extra axis'),
         ],
@@ -291,7 +288,7 @@ export const robots: readonly Robot[] = [
       },
       {
         label: l('Gerak', 'Drive'),
-        value: l('2WD aluminium, driver TB6612FNG', '2WD aluminium, TB6612FNG driver'),
+        value: l('2WD, driver TB6612FNG', '2WD, TB6612FNG driver'),
       },
       { label: l('Daya', 'Power'), value: l('2S 18650 dengan BMS', '2S 18650 with BMS') },
       {

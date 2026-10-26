@@ -9,7 +9,7 @@
  *   Sein   #ffb020  the turn signals: new drops, "coming soon", the dot on the i
  *
  * Every robot also owns a colour, used for its number plate and its page:
- * Ciko red, Momo yellow (its wheels).
+ * Ciko red, Momo teal (its plug-and-code sensor mounts).
  *
  * Import after `@import "tailwindcss";` and add `@source` for the ui package.
  */
@@ -37,7 +37,7 @@
   --ink: #1f2228;
   --ink-foreground: #ffffff;
   --robot-ciko: #e3262d;
-  --robot-momo: #f2b705;
+  --robot-momo: #22b3a3;
   --robot-drop: #ffb020;
 }
 
