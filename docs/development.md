@@ -73,6 +73,11 @@ catalogue, and on its own page, with nothing else. When it goes on sale, move it
 `packages/catalog/src/sellers.ts`) and `price: null`. Its contact details are configured per
 seller in `apps/store/src/lib/site-config.ts` and the `NEXT_PUBLIC_<SELLER>_*` variables.
 
+**An arena banner.** The print files come from the simulator: `pnpm --filter @dctedu/simulator
+arena:pdf` writes `apps/simulator/print/arena-<robot>.pdf` from the Follow the line missions.
+The products are `banner-arena-*` in `packages/catalog/src/shop.ts`, and their pictures are
+previews of those PDFs in `apps/store/src/assets/products/`.
+
 **Something orderable.** It goes on sale when its availability is not `soon` and it has a price.
 The cart prices lines from the catalogue each time, so a price change needs no cart migration.
 

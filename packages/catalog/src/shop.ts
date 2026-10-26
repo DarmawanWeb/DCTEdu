@@ -218,6 +218,72 @@ export const products: readonly Product[] = [
     availability: 'soon',
   },
   {
+    slug: 'banner-arena-ciko',
+    kind: 'arena',
+    name: l('Banner Arena Ciko', 'Ciko Arena Banner'),
+    icon: 'arena',
+    tagline: l('Lintasan misi Ikuti garis, ukuran asli', 'The Follow the line track at full size'),
+    body: l(
+      'Banner 200 × 140 cm dengan lintasan yang sama persis dengan misi Ikuti garis Ciko di simulator: start, titik cek 1, 2, 3, dan finis. Program yang lulus di layar bisa langsung dijalankan di lantai. Dicetak di flexi Korea 440 g doff, yang tidak memantulkan cahaya ke sensor garis.',
+      'A 200 × 140 cm banner with exactly the track of Ciko’s Follow the line mission in the simulator: start, checkpoints 1, 2, 3, and the finish. A program that passes on screen runs on the floor as it is. Printed on 440 g Korean flexi with a matte finish, which keeps glare off the line sensors.',
+    ),
+    includes: [
+      l(
+        'Banner 200 × 140 cm, flexi Korea 440 g doff',
+        '200 × 140 cm banner, 440 g matte Korean flexi',
+      ),
+      l('Garis 1,8 cm, start, titik cek, dan finis', '1.8 cm line, start, checkpoints, and finish'),
+      l(
+        'Kotak 10 cm dan penggaris 20 cm untuk mengukur',
+        '10 cm squares and a 20 cm scale for measuring',
+      ),
+      l('Dikirim digulung dalam tabung', 'Shipped rolled in a tube'),
+    ],
+    projects: [
+      l('Misi Ikuti garis di robot nyata', 'The Follow the line mission on the real robot'),
+      l(
+        'Lomba line follower kecil di rumah atau di kelas',
+        'Small line-follower contests at home or in class',
+      ),
+    ],
+    fits: ['ciko'],
+    price: 349_000,
+    availability: 'preorder',
+  },
+  {
+    slug: 'banner-arena-momo',
+    kind: 'arena',
+    name: l('Banner Arena Momo', 'Momo Arena Banner'),
+    icon: 'arena',
+    tagline: l('Lintasan misi Ikuti garis, ukuran asli', 'The Follow the line track at full size'),
+    body: l(
+      'Banner 200 × 140 cm dengan lintasan yang sama persis dengan misi Ikuti garis Momo di simulator: start, titik cek 1, 2, 3, dan finis, dengan tikungan untuk melatih kendali proporsional. Dicetak di flexi Korea 440 g doff, yang tidak memantulkan cahaya ke sensor garis.',
+      'A 200 × 140 cm banner with exactly the track of Momo’s Follow the line mission in the simulator: start, checkpoints 1, 2, 3, and the finish, with bends for practising proportional control. Printed on 440 g Korean flexi with a matte finish, which keeps glare off the line sensors.',
+    ),
+    includes: [
+      l(
+        'Banner 200 × 140 cm, flexi Korea 440 g doff',
+        '200 × 140 cm banner, 440 g matte Korean flexi',
+      ),
+      l('Garis 1,8 cm, start, titik cek, dan finis', '1.8 cm line, start, checkpoints, and finish'),
+      l(
+        'Kotak 10 cm dan penggaris 20 cm untuk mengukur',
+        '10 cm squares and a 20 cm scale for measuring',
+      ),
+      l('Dikirim digulung dalam tabung', 'Shipped rolled in a tube'),
+    ],
+    projects: [
+      l('Misi Ikuti garis di robot nyata', 'The Follow the line mission on the real robot'),
+      l(
+        'Menyetel kendali proporsional dengan sensor 5-in-1',
+        'Tuning proportional control with the 5-in-1 array',
+      ),
+    ],
+    fits: ['momo'],
+    price: 349_000,
+    availability: 'preorder',
+  },
+  {
     slug: 'baterai-cadangan',
     kind: 'aksesori',
     name: l('Baterai cadangan', 'Spare battery'),
