@@ -1,0 +1,36 @@
+{
+  "name": "dctedu",
+  "private": true,
+  "version": "1.0.0",
+  "description": "DCTEdu: the education robot store and the block-based robot simulator.",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:store": "turbo run dev --filter=@dctedu/store",
+    "dev:simulator": "turbo run dev --filter=@dctedu/simulator",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "check": "biome ci . && turbo run typecheck test",
+    "format": "biome format --write .",
+    "commitlint": "commitlint",
+    "prepare": "husky || true",
+    "biome": "biome"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "turbo": "^2.11.8"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,mjs,cjs,json,jsonc,css}": "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
+  }
+}
