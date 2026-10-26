@@ -82,4 +82,6 @@ addresses people will use, so the two apps link to each other.
 | [Simulator](docs/simulator.md) | Stack, from blocks to the engine and to C++, the robots, missions and goals, the screen, storage, configuration |
 | [Development](docs/development.md) | Setup, layout, scripts, commits, recipes for a page, a string, a robot, a mission, a block, and the brand name, design rules, CI |
 
-Proprietary. Copyright (c) 2026 DCTEdu. All rights reserved.
+DCTEdu is the education robot line of PT Dharma Cipta Teknologi.
+
+Proprietary. Copyright (c) 2026 PT Dharma Cipta Teknologi. All rights reserved.

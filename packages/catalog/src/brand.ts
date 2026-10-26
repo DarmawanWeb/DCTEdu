@@ -8,14 +8,16 @@ const l = (id: string, en: string): Localized => ({ id, en });
  */
 export const brand = {
   name: 'DCTEdu',
+  /** The company behind the brand, for copyright and legal lines. DCT stands for its name. */
+  company: 'PT Dharma Cipta Teknologi',
   tagline: l('Robot untuk diulik.', 'Robots made for tinkering.'),
   promise: l(
     'Robot bernama dan bernomor, lengkap dengan jalur belajar online gratis.',
     'Named, numbered robots, each with a free online learning path.',
   ),
   story: l(
-    'DCTEdu merancang dan merakit robot edukasi di Indonesia. Setiap robot punya nama, nomor, dan jalur belajarnya sendiri: video, panduan, dan misi simulator yang bisa diikuti dari rumah. Kami menjual satuan, menyiapkan pembelian dalam jumlah banyak untuk sekolah dan kursus, dan membuat versi OEM dengan merek Anda.',
-    'DCTEdu designs and builds education robots in Indonesia. Every robot has a name, a number, and its own learning path: videos, guides, and simulator missions you can follow at home. We sell single units, handle bulk orders for schools and courses, and make OEM versions under your brand.',
+    'DCTEdu adalah lini robot edukasi PT Dharma Cipta Teknologi, dirancang dan dirakit di Indonesia. Setiap robot punya nama, nomor, dan jalur belajarnya sendiri: video, panduan, dan misi simulator yang bisa diikuti dari rumah. Kami menjual satuan, menyiapkan pembelian dalam jumlah banyak untuk sekolah dan kursus, dan membuat versi OEM dengan merek Anda.',
+    'DCTEdu is the education robot line of PT Dharma Cipta Teknologi, designed and built in Indonesia. Every robot has a name, a number, and its own learning path: videos, guides, and simulator missions you can follow at home. We sell single units, handle bulk orders for schools and courses, and make OEM versions under your brand.',
   ),
   location: l('Bali, Indonesia', 'Bali, Indonesia'),
   contact: {
