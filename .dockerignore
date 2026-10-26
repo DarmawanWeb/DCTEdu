@@ -5,4 +5,4 @@
 **/.git
 .env*
 !.env.example
-apps/sim/public/blockly-media
+apps/simulator/public/blockly-media

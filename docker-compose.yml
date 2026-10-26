@@ -1,0 +1,40 @@
+# DCTEdu: the store and the simulator, each its own small Next.js server.
+#   cp .env.example .env && docker compose up -d --build
+# The store answers on STORE_PORT (3000) and the simulator on SIMULATOR_PORT (3001). Put any
+# reverse proxy or tunnel in front of them and set the two public URLs to its addresses.
+name: dctedu
+
+x-public: &public
+  NEXT_PUBLIC_STORE_URL: ${STORE_URL:-http://localhost:3000}
+  NEXT_PUBLIC_SIMULATOR_URL: ${SIMULATOR_URL:-http://localhost:3001}
+  NEXT_PUBLIC_WHATSAPP_NUMBER: ${WHATSAPP_NUMBER:-}
+  NEXT_PUBLIC_EMAIL: ${CONTACT_EMAIL:-}
+  NEXT_PUBLIC_TOKOPEDIA_URL: ${TOKOPEDIA_URL:-}
+  NEXT_PUBLIC_SHOPEE_URL: ${SHOPEE_URL:-}
+
+x-app: &app
+  restart: unless-stopped
+  logging:
+    driver: json-file
+    options: { max-size: '10m', max-file: '3' }
+
+services:
+  store:
+    <<: *app
+    image: dctedu/store:local
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args: { APP: store, <<: *public }
+    ports:
+      - '${BIND_ADDRESS:-127.0.0.1}:${STORE_PORT:-3000}:3000'
+
+  simulator:
+    <<: *app
+    image: dctedu/simulator:local
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args: { APP: simulator, <<: *public }
+    ports:
+      - '${BIND_ADDRESS:-127.0.0.1}:${SIMULATOR_PORT:-3001}:3000'
