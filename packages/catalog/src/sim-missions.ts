@@ -104,6 +104,15 @@ export const simMissions: readonly SimMissionInfo[] = [
     ),
   },
   {
+    id: 'ciko-arena',
+    robot: 'ciko',
+    title: l('Tantangan arena', 'Arena challenge'),
+    brief: l(
+      'Lintasan angka delapan dengan persimpangan, kantong sempit, dan chicane: satu putaran dalam 70 detik. Sama dengan banner arena Ciko.',
+      'A figure-eight track with a crossing, a tight pocket, and a chicane: one lap in 70 seconds. The same as Ciko’s arena banner.',
+    ),
+  },
+  {
     id: 'momo-sistem',
     robot: 'momo',
     title: l('Satu sensor, satu aksi', 'One sensor, one action'),
@@ -128,6 +137,15 @@ export const simMissions: readonly SimMissionInfo[] = [
     brief: l(
       'Selesaikan satu putaran lintasan dengan koreksi berdasarkan posisi garis.',
       'Complete a lap using corrections from the line position.',
+    ),
+  },
+  {
+    id: 'momo-arena',
+    robot: 'momo',
+    title: l('Tantangan arena', 'Arena challenge'),
+    brief: l(
+      'Hairpin, dua zigzag, tangga, sudut tajam, dan persimpangan: satu putaran dalam 32 detik. Sama dengan banner arena Momo.',
+      'A hairpin, two zigzags, steps, sharp corners, and a crossing: one lap in 32 seconds. The same as Momo’s arena banner.',
     ),
   },
   {

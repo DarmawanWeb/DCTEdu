@@ -31,7 +31,7 @@ the shared packages, the Docker stack, and CI.
 | App | Repository | Port | What it is |
 |---|---|---|---|
 | `apps/store` | [education-robot-web](https://github.com/DarmawanWeb/education-robot-web) | 3000 | The store: robots on a starting grid by number, the catalogue with a goal filter, a page per robot, accessories, numbered Drops, a cart that orders over WhatsApp or email, free learning paths and guides, and a page for bulk orders and OEM |
-| `apps/simulator` | [education-robot-sim](https://github.com/DarmawanWeb/education-robot-sim) | 3001 | The simulator: Blockly programs for Ciko and Momo run on a virtual track at 120 steps a second, with 18 missions that are steps on the learning paths, live goals, and the same program as Arduino C++ |
+| `apps/simulator` | [education-robot-sim](https://github.com/DarmawanWeb/education-robot-sim) | 3001 | The simulator: Blockly programs for Ciko and Momo run on a virtual track at 120 steps a second, with 20 missions that are steps on the learning paths, live goals, and the same program as Arduino C++ |
 
 Both read every name, price, age, and learning step from one catalogue in
 [`packages/catalog`](packages/catalog), and share the theme and wordmark in

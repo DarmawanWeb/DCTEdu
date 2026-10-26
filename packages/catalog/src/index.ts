@@ -1,5 +1,6 @@
 export * from './brand';
 export * from './business';
+export * from './clients';
 export * from './drops';
 export * from './faq';
 export * from './guides';

@@ -195,6 +195,14 @@ export const learnPaths: readonly LearnPath[] = [
         ),
       },
       {
+        id: 'arena',
+        understand: l(
+          'Lintasan sungguhan jarang mulus. Persimpangan, belokan sempit, dan batas waktu menguji seberapa baik program garismu. Coba juga di banner arena Ciko.',
+          'Real tracks are rarely smooth. A crossing, tight bends, and a time limit test how good your line program is. Try it on Ciko’s arena banner too.',
+        ),
+        mission: 'ciko-arena',
+      },
+      {
         id: 'ke-robot',
         understand: l(
           'Program blok yang sama punya versi C++. Unggah ke Ciko, lalu bandingkan hasilnya dengan simulator.',
@@ -269,6 +277,14 @@ export const learnPaths: readonly LearnPath[] = [
             'The P part is enough for this mission; I and D make a good extra challenge.',
           ),
         ),
+      },
+      {
+        id: 'arena',
+        understand: l(
+          'Makin cepat robot berjalan, makin besar koreksi yang dibutuhkan. Setel kecepatan dan gain bersama-sama sampai satu putaran selesai di bawah 32 detik. Coba juga di banner arena Momo.',
+          'The faster the robot goes, the stronger the correction it needs. Tune speed and gain together until a lap takes under 32 seconds. Try it on Momo’s arena banner too.',
+        ),
+        mission: 'momo-arena',
       },
       {
         id: 'radar',

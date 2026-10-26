@@ -74,7 +74,7 @@ catalogue, and on its own page, with nothing else. When it goes on sale, move it
 seller in `apps/store/src/lib/site-config.ts` and the `NEXT_PUBLIC_<SELLER>_*` variables.
 
 **An arena banner.** The print files come from the simulator: `pnpm --filter @dctedu/simulator
-arena:pdf` writes `apps/simulator/print/arena-<robot>.pdf` from the Follow the line missions.
+arena:pdf` writes `apps/simulator/print/arena-<robot>.pdf` from the Arena challenge missions.
 The products are `banner-arena-*` in `packages/catalog/src/shop.ts`, and their pictures are
 previews of those PDFs in `apps/store/src/assets/products/`.
 

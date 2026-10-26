@@ -222,10 +222,13 @@ export const products: readonly Product[] = [
     kind: 'arena',
     name: l('Banner Arena Ciko', 'Ciko Arena Banner'),
     icon: 'arena',
-    tagline: l('Lintasan misi Ikuti garis, ukuran asli', 'The Follow the line track at full size'),
+    tagline: l(
+      'Angka delapan dengan persimpangan, kantong sempit, dan chicane',
+      'A figure eight with a crossing, a tight pocket, and a chicane',
+    ),
     body: l(
-      'Banner 200 × 140 cm dengan lintasan yang sama persis dengan misi Ikuti garis Ciko di simulator: start, titik cek 1, 2, 3, dan finis. Program yang lulus di layar bisa langsung dijalankan di lantai. Dicetak di flexi Korea 440 g doff, yang tidak memantulkan cahaya ke sensor garis.',
-      'A 200 × 140 cm banner with exactly the track of Ciko’s Follow the line mission in the simulator: start, checkpoints 1, 2, 3, and the finish. A program that passes on screen runs on the floor as it is. Printed on 440 g Korean flexi with a matte finish, which keeps glare off the line sensors.',
+      'Banner 200 × 140 cm dengan lintasan Tantangan arena Ciko dari simulator: angka delapan yang bersilang tegak lurus di tengah, kantong sempit di kiri bawah, dan chicane di kanan. Targetnya satu putaran dalam 70 detik: terlalu cepat Ciko lepas di kantong, terlalu pelan waktunya habis. Program yang lulus di layar bisa langsung dijalankan di lantai. Dicetak di flexi Korea 440 g doff, yang tidak memantulkan cahaya ke sensor garis.',
+      'A 200 × 140 cm banner with Ciko’s Arena challenge track from the simulator: a figure eight crossing square in the middle, a tight pocket at the bottom left, and a chicane on the right. The target is one lap in 70 seconds: too fast and Ciko slips out of the pocket, too slow and time runs out. A program that passes on screen runs on the floor as it is. Printed on 440 g Korean flexi with a matte finish, which keeps glare off the line sensors.',
     ),
     includes: [
       l(
@@ -240,11 +243,8 @@ export const products: readonly Product[] = [
       l('Dikirim digulung dalam tabung', 'Shipped rolled in a tube'),
     ],
     projects: [
-      l('Misi Ikuti garis di robot nyata', 'The Follow the line mission on the real robot'),
-      l(
-        'Lomba line follower kecil di rumah atau di kelas',
-        'Small line-follower contests at home or in class',
-      ),
+      l('Tantangan arena di robot nyata', 'The Arena challenge on the real robot'),
+      l('Lomba waktu tempuh di rumah atau di kelas', 'Lap-time contests at home or in class'),
     ],
     fits: ['ciko'],
     price: 349_000,
@@ -255,10 +255,13 @@ export const products: readonly Product[] = [
     kind: 'arena',
     name: l('Banner Arena Momo', 'Momo Arena Banner'),
     icon: 'arena',
-    tagline: l('Lintasan misi Ikuti garis, ukuran asli', 'The Follow the line track at full size'),
+    tagline: l(
+      'Hairpin, zigzag, tangga, sudut tajam, dan persimpangan',
+      'A hairpin, zigzags, steps, sharp corners, and a crossing',
+    ),
     body: l(
-      'Banner 200 × 140 cm dengan lintasan yang sama persis dengan misi Ikuti garis Momo di simulator: start, titik cek 1, 2, 3, dan finis, dengan tikungan untuk melatih kendali proporsional. Dicetak di flexi Korea 440 g doff, yang tidak memantulkan cahaya ke sensor garis.',
-      'A 200 × 140 cm banner with exactly the track of Momo’s Follow the line mission in the simulator: start, checkpoints 1, 2, 3, and the finish, with bends for practising proportional control. Printed on 440 g Korean flexi with a matte finish, which keeps glare off the line sensors.',
+      'Banner 200 × 140 cm dengan lintasan Tantangan arena Momo dari simulator: hairpin, zigzag di kedua sisi, tangga, sudut hampir tajam, dan persimpangan tegak lurus. Targetnya satu putaran dalam 32 detik, yang hanya bisa dicapai dengan menyetel kecepatan dan gain kendali proporsional bersama-sama. Dicetak di flexi Korea 440 g doff, yang tidak memantulkan cahaya ke sensor garis.',
+      'A 200 × 140 cm banner with Momo’s Arena challenge track from the simulator: a hairpin, zigzags on both sides, steps, near-sharp corners, and a square crossing. The target is one lap in 32 seconds, which takes tuning the speed and the proportional gain together. Printed on 440 g Korean flexi with a matte finish, which keeps glare off the line sensors.',
     ),
     includes: [
       l(
@@ -273,10 +276,10 @@ export const products: readonly Product[] = [
       l('Dikirim digulung dalam tabung', 'Shipped rolled in a tube'),
     ],
     projects: [
-      l('Misi Ikuti garis di robot nyata', 'The Follow the line mission on the real robot'),
+      l('Tantangan arena di robot nyata', 'The Arena challenge on the real robot'),
       l(
-        'Menyetel kendali proporsional dengan sensor 5-in-1',
-        'Tuning proportional control with the 5-in-1 array',
+        'Menyetel kendali proporsional untuk waktu terbaik',
+        'Tuning proportional control for the best lap time',
       ),
     ],
     fits: ['momo'],
