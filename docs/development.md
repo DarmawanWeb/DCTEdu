@@ -3,8 +3,9 @@
 ## Setup
 
 ```bash
+git clone --recursive https://github.com/DarmawanWeb/DCTEdu.git && cd DCTEdu
 corepack enable                 # pnpm 10, Node 22.12 or newer (.nvmrc)
-pnpm install                    # also installs the commit hooks
+pnpm install                    # also installs the commit hooks, in each submodule too
 cp apps/store/.env.example apps/store/.env.local
 cp apps/simulator/.env.example apps/simulator/.env.local
 pnpm dev                        # store on http://localhost:3000/id, simulator on :3001/id
@@ -18,8 +19,8 @@ email.
 
 | Path | Package | What it is |
 |---|---|---|
-| `apps/store` | `@dctedu/store` | The store and the learning paths ([store.md](store.md)) |
-| `apps/simulator` | `@dctedu/simulator` | The block simulator ([simulator.md](simulator.md)) |
+| `apps/store` | `@dctedu/store` | The store and the learning paths; submodule [education-robot-web](https://github.com/DarmawanWeb/education-robot-web) |
+| `apps/simulator` | `@dctedu/simulator` | The block simulator; submodule [education-robot-sim](https://github.com/DarmawanWeb/education-robot-sim) |
 | `packages/catalog` | `@dctedu/catalog` | Every fact both apps show: brand, robots, prices, accessories, Drops, learning paths, guides, missions |
 | `packages/ui` | `@dctedu/ui` | Theme tokens (`theme.css`), the wordmark, the race number, and the shared components |
 | `packages/typescript-config` | `@dctedu/typescript-config` | The strict TypeScript bases |
@@ -38,6 +39,11 @@ Run at the root; Turborepo runs them in every package that has them.
 | `pnpm format` | Biome format |
 
 ## Commits
+
+The apps are their own repositories: commit inside `apps/store` or `apps/simulator` and push
+it, then record the new commit here (`git add apps/store`, `chore: update store`). A change that
+touches a shared package and an app is two commits: the app's, then the workspace's with the
+package change and the new submodule commit.
 
 Conventional Commits with a lower-case subject; commitlint checks them in the `commit-msg` hook
 and lint-staged formats staged files with Biome in `pre-commit`. Scopes: `store`, `simulator`,

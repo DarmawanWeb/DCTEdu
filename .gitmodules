@@ -1,0 +1,6 @@
+[submodule "apps/store"]
+	path = apps/store
+	url = ../education-robot-web.git
+[submodule "apps/simulator"]
+	path = apps/simulator
+	url = ../education-robot-sim.git

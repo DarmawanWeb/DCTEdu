@@ -25,10 +25,13 @@ before (or after) one arrives. In Indonesian and English.**
 
 ## Apps
 
-| App | Port | What it is |
-|---|---|---|
-| [`apps/store`](apps/store) | 3000 | The store: robots on a starting grid by number, the catalogue with a goal filter, a page per robot, accessories, numbered Drops, a cart that orders over WhatsApp or email, free learning paths and guides, and a page for bulk orders and OEM |
-| [`apps/simulator`](apps/simulator) | 3001 | The simulator: Blockly programs for Ciko and Momo run on a virtual track at 120 steps a second, with 18 missions that are steps on the learning paths, live goals, and the same program as Arduino C++ |
+Each app lives in its own repository and is pinned here as a submodule; this repository holds
+the shared packages, the Docker stack, and CI.
+
+| App | Repository | Port | What it is |
+|---|---|---|---|
+| `apps/store` | [education-robot-web](https://github.com/DarmawanWeb/education-robot-web) | 3000 | The store: robots on a starting grid by number, the catalogue with a goal filter, a page per robot, accessories, numbered Drops, a cart that orders over WhatsApp or email, free learning paths and guides, and a page for bulk orders and OEM |
+| `apps/simulator` | [education-robot-sim](https://github.com/DarmawanWeb/education-robot-sim) | 3001 | The simulator: Blockly programs for Ciko and Momo run on a virtual track at 120 steps a second, with 18 missions that are steps on the learning paths, live goals, and the same program as Arduino C++ |
 
 Both read every name, price, age, and learning step from one catalogue in
 [`packages/catalog`](packages/catalog), and share the theme and wordmark in
@@ -50,10 +53,15 @@ stays in the browser that made it.
 ## Run it
 
 ```bash
+git clone --recursive https://github.com/DarmawanWeb/DCTEdu.git && cd DCTEdu
 corepack enable                 # pnpm 10, Node 22.12 or newer
-pnpm install
+pnpm install                    # also points each submodule's git hooks at the workspace's
 pnpm dev                        # store http://localhost:3000/id, simulator http://localhost:3001/id
 ```
+
+A change to an app is committed and pushed in its submodule, then recorded here
+(`git add apps/store`, `chore: update store`). `git submodule update --remote` pulls both apps to
+their latest `main`.
 
 Checks, as CI runs them:
 
@@ -80,8 +88,8 @@ addresses people will use, so the two apps link to each other.
 
 | Document | Contents |
 |---|---|
-| [Store](docs/store.md) | Stack, routes and redirects, where data comes from, the cart and ordering flow, learning paths and simulator links, languages, images and social cards, configuration |
-| [Simulator](docs/simulator.md) | Stack, from blocks to the engine and to C++, the robots, missions and goals, the screen, storage, configuration |
+| [Store](https://github.com/DarmawanWeb/education-robot-web/blob/main/docs/architecture.md) | Stack, routes and redirects, where data comes from, the cart and ordering flow, learning paths and simulator links, languages, images and social cards, configuration |
+| [Simulator](https://github.com/DarmawanWeb/education-robot-sim/blob/main/docs/architecture.md) | Stack, from blocks to the engine and to C++, the robots, missions and goals, the screen, storage, configuration |
 | [Development](docs/development.md) | Setup, layout, scripts, commits, recipes for a page, a string, a robot, a mission, a block, and the brand name, design rules, CI |
 
 DCTEdu is the education robot line of PT Dharma Cipta Teknologi.

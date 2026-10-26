@@ -2,7 +2,7 @@
   "name": "dctedu",
   "private": true,
   "version": "1.0.0",
-  "description": "DCTEdu: the education robot store and the block-based robot simulator.",
+  "description": "DCTEdu by PT Dharma Cipta Teknologi: the education robot store and the block simulator, with the shared packages and the Docker stack that runs them.",
   "packageManager": "pnpm@10.28.0",
   "engines": {
     "node": ">=22.12"
@@ -19,7 +19,7 @@
     "check": "biome ci . && turbo run typecheck test",
     "format": "biome format --write .",
     "commitlint": "commitlint",
-    "prepare": "husky || true",
+    "prepare": "husky && (git submodule foreach --quiet 'git config core.hooksPath \"$toplevel/.husky/_\"' >/dev/null 2>&1 || true)",
     "biome": "biome"
   },
   "devDependencies": {
