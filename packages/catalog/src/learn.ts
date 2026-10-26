@@ -365,23 +365,6 @@ export const learnPaths: readonly LearnPath[] = [
       },
     ],
   },
-  {
-    robot: 'garu',
-    intro: l(
-      'Jalur belajar Garu terbit bersama robotnya. Sambil menunggu, siapkan ROS 2 dengan panduan di bawah.',
-      'Garu’s learning path launches with the robot. Meanwhile, get ROS 2 ready with the guide below.',
-    ),
-    steps: [
-      {
-        id: 'persiapan',
-        understand: l(
-          'Komputer onboard, jaringan, dan ROS 2 sebelum Garu bergerak pertama kali.',
-          'The onboard computer, the network, and ROS 2 before Garu first moves.',
-        ),
-        guide: 'persiapan-garu',
-      },
-    ],
-  },
 ];
 
 export function learnPath(robot: RobotSlug): LearnPath | undefined {

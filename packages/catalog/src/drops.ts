@@ -5,7 +5,7 @@ const l = (id: string, en: string): Localized => ({ id, en });
 
 /**
  * Drops are small robots from our R&D bench, released one at a time. They continue the
- * robots' number series, so the first Drop after Garu (#03) is #04.
+ * robots' number series, so the first Drop after #03 is #04.
  */
 export interface Drop {
   number: number;
@@ -43,8 +43,8 @@ export const dropSteps: ReadonlyArray<{ id: string; title: Localized; body: Loca
     id: 'reveal',
     title: l('Dibuka dengan nomor', 'Revealed with a number'),
     body: l(
-      'Saat siap, robotnya dapat nama dan nomor berikutnya di seri Taksu, lengkap dengan jalur belajar dan misi simulator.',
-      'When it is ready, it gets a name and the next number in the Taksu series, with a learning path and simulator missions.',
+      'Saat siap, robotnya dapat nama dan nomor berikutnya di seri DCTEdu, lengkap dengan jalur belajar dan misi simulator.',
+      'When it is ready, it gets a name and the next number in the DCTEdu series, with a learning path and simulator missions.',
     ),
   },
   {

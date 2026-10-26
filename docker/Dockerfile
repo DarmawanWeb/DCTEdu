@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.7
 # Builds one app of the workspace as a small standalone Next.js image.
-#   docker build -f docker/Dockerfile --build-arg APP=web -t taksu-web .
+#   docker build -f docker/Dockerfile --build-arg APP=web -t dctedu-store .
 ARG NODE_VERSION=22-alpine
 
 FROM node:${NODE_VERSION} AS base
@@ -11,17 +11,17 @@ WORKDIR /repo
 FROM base AS pruner
 ARG APP
 COPY . .
-RUN pnpm dlx turbo@2.11.7 prune @taksu/${APP} --docker
+RUN pnpm dlx turbo@2.11.7 prune @dctedu/${APP} --docker
 
 FROM base AS builder
 ARG APP
 ARG NEXT_PUBLIC_COMPANY_URL=http://localhost:3000
-ARG NEXT_PUBLIC_EDU_URL=http://localhost:3003
+ARG NEXT_PUBLIC_EDU_URL=http://localhost:3000
 ARG NEXT_PUBLIC_ROBOT_URL=http://localhost:3004
 ARG NEXT_PUBLIC_KIOSK_URL=http://localhost:3001
-ARG NEXT_PUBLIC_SIM_URL=http://localhost:3002
+ARG NEXT_PUBLIC_SIMULATOR_URL=http://localhost:3001
 ARG NEXT_PUBLIC_WHATSAPP_NUMBER=
-ARG NEXT_PUBLIC_WEB_URL=http://localhost:3003
+ARG NEXT_PUBLIC_STORE_URL=http://localhost:3000
 ARG NEXT_PUBLIC_EMAIL=
 ARG NEXT_PUBLIC_TOKOPEDIA_URL=
 ARG NEXT_PUBLIC_SHOPEE_URL=
@@ -29,16 +29,16 @@ ENV NEXT_PUBLIC_COMPANY_URL=$NEXT_PUBLIC_COMPANY_URL \
     NEXT_PUBLIC_EDU_URL=$NEXT_PUBLIC_EDU_URL \
     NEXT_PUBLIC_ROBOT_URL=$NEXT_PUBLIC_ROBOT_URL \
     NEXT_PUBLIC_KIOSK_URL=$NEXT_PUBLIC_KIOSK_URL \
-    NEXT_PUBLIC_SIM_URL=$NEXT_PUBLIC_SIM_URL \
+    NEXT_PUBLIC_SIMULATOR_URL=$NEXT_PUBLIC_SIMULATOR_URL \
     NEXT_PUBLIC_WHATSAPP_NUMBER=$NEXT_PUBLIC_WHATSAPP_NUMBER \
-    NEXT_PUBLIC_WEB_URL=$NEXT_PUBLIC_WEB_URL \
+    NEXT_PUBLIC_STORE_URL=$NEXT_PUBLIC_STORE_URL \
     NEXT_PUBLIC_EMAIL=$NEXT_PUBLIC_EMAIL \
     NEXT_PUBLIC_TOKOPEDIA_URL=$NEXT_PUBLIC_TOKOPEDIA_URL \
     NEXT_PUBLIC_SHOPEE_URL=$NEXT_PUBLIC_SHOPEE_URL
 COPY --from=pruner /repo/out/json/ .
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 COPY --from=pruner /repo/out/full/ .
-RUN pnpm turbo run build --filter=@taksu/${APP}
+RUN pnpm turbo run build --filter=@dctedu/${APP}
 
 FROM node:${NODE_VERSION} AS runner
 ARG APP

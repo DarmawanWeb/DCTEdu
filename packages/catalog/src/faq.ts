@@ -38,8 +38,8 @@ export const faq: readonly Question[] = [
     id: 'age',
     question: l('Usia di setiap robot itu wajib?', 'Is the age on each robot a rule?'),
     answer: l(
-      'Itu saran. Ciko dirancang untuk mulai dari usia 7 tahun, Momo dari 11, Garu dari 15. Anak yang lebih muda tetap bisa, dengan didampingi.',
-      'It is a suggestion. Ciko is designed for ages 7 and up, Momo for 11 and up, Garu for 15 and up. Younger children can still join in with an adult.',
+      'Itu saran. Ciko dirancang untuk mulai dari usia 7 tahun dan Momo dari 11. Anak yang lebih muda tetap bisa, dengan didampingi.',
+      'It is a suggestion. Ciko is designed for ages 7 and up and Momo for 11 and up. Younger children can still join in with an adult.',
     ),
   },
   {
@@ -62,8 +62,8 @@ export const faq: readonly Question[] = [
     id: 'solder',
     question: l('Perlu menyolder?', 'Do I need to solder?'),
     answer: l(
-      'Tidak. Ciko datang sudah dirakit. Momo dirakit dari modul dengan konektor berkunci. Garu juga dirakit tanpa solder.',
-      'No. Ciko arrives assembled. Momo is built from modules with keyed connectors. Garu goes together without soldering too.',
+      'Tidak. Ciko datang sudah dirakit. Momo dirakit dari modul dengan konektor berkunci.',
+      'No. Ciko arrives assembled. Momo is built from modules with keyed connectors.',
     ),
   },
   {

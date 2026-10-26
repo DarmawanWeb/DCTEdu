@@ -64,8 +64,8 @@ export const guides: readonly Guide[] = [
         title: l('Program pertama', 'First program'),
         steps: [
           l(
-            'Buka simulator Taksu, pilih Ciko, lalu misi Kenalan dengan robot.',
-            'Open the Taksu simulator, choose Ciko, then the Meet the robot mission.',
+            'Buka simulator DCTEdu, pilih Ciko, lalu misi Kenalan dengan robot.',
+            'Open the DCTEdu simulator, choose Ciko, then the Meet the robot mission.',
           ),
           l(
             'Susun blok: tampilkan wajah senang, bunyikan bip, maju 1 detik.',
@@ -184,7 +184,7 @@ export const guides: readonly Guide[] = [
   },
   {
     slug: 'memakai-simulator',
-    title: l('Memakai simulator Taksu', 'Using the Taksu simulator'),
+    title: l('Memakai simulator DCTEdu', 'Using the DCTEdu simulator'),
     summary: l(
       'Pilih robot dan misi, susun blok, baca panel sensor, lalu lihat kode C++-nya.',
       'Pick a robot and a mission, snap blocks together, read the sensor panel, then see the C++.',
@@ -314,7 +314,7 @@ export const guides: readonly Guide[] = [
       'Aturan baterai litium untuk di rumah dan di kelas.',
       'Lithium battery rules for home and class.',
     ),
-    robots: ['ciko', 'momo', 'garu'],
+    robots: ['ciko', 'momo'],
     audience: 'owner',
     minutes: 10,
     sections: [
@@ -364,57 +364,13 @@ export const guides: readonly Guide[] = [
     ],
   },
   {
-    slug: 'persiapan-garu',
-    title: l('Menyiapkan Garu', 'Setting up Garu'),
-    summary: l(
-      'Komputer onboard, jaringan, dan ROS 2 sebelum Garu bergerak pertama kali.',
-      'The onboard computer, the network, and ROS 2 before Garu first moves.',
-    ),
-    robots: ['garu'],
-    audience: 'owner',
-    minutes: 45,
-    sections: [
-      {
-        title: l('Komputer onboard', 'Onboard computer'),
-        steps: [
-          l(
-            'Tulis image sistem Garu ke kartu atau SSD sesuai paket.',
-            'Write the Garu system image to the card or SSD for your package.',
-          ),
-          l(
-            'Hubungkan ke Wi-Fi dan catat alamat IP robot.',
-            'Join the Wi-Fi and note the robot’s IP address.',
-          ),
-        ],
-      },
-      {
-        title: l('ROS 2', 'ROS 2'),
-        steps: [
-          l(
-            'Masuk lewat SSH, lalu jalankan launch file bringup.',
-            'Log in over SSH, then run the bringup launch file.',
-          ),
-          l('Uji teleoperasi pelan di area kosong.', 'Test slow teleoperation in a clear area.'),
-          l(
-            'Buka RViz di laptop untuk melihat LiDAR dan kamera.',
-            'Open RViz on a laptop to see the LiDAR and camera.',
-          ),
-        ],
-        note: l(
-          'Pasang batas kecepatan rendah saat mencoba program baru.',
-          'Keep a low speed limit while you try new programs.',
-        ),
-      },
-    ],
-  },
-  {
     slug: 'mengajar-di-kelas',
-    title: l('Memakai robot Taksu di kelas', 'Running a class with Taksu robots'),
+    title: l('Memakai robot DCTEdu di kelas', 'Running a class with DCTEdu robots'),
     summary: l(
       'Untuk pengajar sekolah, kursus, dan ekstrakurikuler: persiapan, alur satu sesi, dan penyimpanan.',
       'For school, course, and club instructors: preparation, the flow of one session, and storage.',
     ),
-    robots: ['ciko', 'momo', 'garu'],
+    robots: ['ciko', 'momo'],
     audience: 'instructor',
     minutes: 15,
     sections: [

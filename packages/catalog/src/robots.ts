@@ -3,12 +3,12 @@ import type { Availability, MarketplaceLinks } from './shop';
 
 const l = (id: string, en: string): Localized => ({ id, en });
 
-export type RobotSlug = 'ciko' | 'momo' | 'garu';
+export type RobotSlug = 'ciko' | 'momo';
 /** Robots the browser simulator can drive. */
 export type SimRobot = 'ciko' | 'momo';
 export type Level = 'pemula' | 'menengah' | 'lanjut';
 /** What a buyer wants the robot for; used to filter the catalogue. */
-export type Goal = 'mulai' | 'lomba' | 'iot' | 'ai';
+export type Goal = 'mulai' | 'lomba' | 'iot';
 
 export const levelLabels: Record<Level, Localized> = {
   pemula: l('Pemula', 'Beginner'),
@@ -20,10 +20,9 @@ export const goalLabels: Record<Goal, Localized> = {
   mulai: l('Mulai dari nol', 'Starting from zero'),
   lomba: l('Persiapan lomba', 'Competition prep'),
   iot: l('IoT dan data', 'IoT and data'),
-  ai: l('AI dan ROS 2', 'AI and ROS 2'),
 };
 
-/** A robot sold in more than one package, such as Garu with a Raspberry Pi or a Jetson. */
+/** A robot sold in more than one package, each with its own price. */
 export interface PriceOption {
   id: string;
   label: Localized;
@@ -55,7 +54,7 @@ export interface Robot {
   /** Rupiah for one unit, or null while the price is not set. */
   price: number | null;
   options?: PriceOption[];
-  /** Shown next to an estimated price, e.g. while a robot is still in development. */
+  /** Shown next to an estimated price. */
   priceNote?: Localized;
   availability: Availability;
   marketplace?: MarketplaceLinks;
@@ -104,8 +103,8 @@ export const robots: readonly Robot[] = [
     },
     controller: 'Arduino Nano',
     programming: l(
-      'Blok di simulator Taksu, lalu Arduino C++ saat sudah siap',
-      'Blocks in the Taksu simulator, then Arduino C++ when you are ready',
+      'Blok di simulator DCTEdu, lalu Arduino C++ saat sudah siap',
+      'Blocks in the DCTEdu simulator, then Arduino C++ when you are ready',
     ),
     inBox: [
       l('Robot Ciko, sudah dirakit dan diuji', 'Ciko, assembled and tested'),
@@ -219,8 +218,8 @@ export const robots: readonly Robot[] = [
     },
     controller: 'ESP32-WROOM',
     programming: l(
-      'Blok di simulator Taksu, lalu C++ di Arduino IDE',
-      'Blocks in the Taksu simulator, then C++ in the Arduino IDE',
+      'Blok di simulator DCTEdu, lalu C++ di Arduino IDE',
+      'Blocks in the DCTEdu simulator, then C++ in the Arduino IDE',
     ),
     inBox: [
       l(
@@ -304,113 +303,26 @@ export const robots: readonly Robot[] = [
     availability: 'preorder',
     sim: 'momo',
   },
-  {
-    slug: 'garu',
-    number: 3,
-    name: 'Garu',
-    tagline: l(
-      'Rover ROS 2 dengan kamera, LiDAR, dan lengan robot',
-      'A ROS 2 rover with a camera, LiDAR, and a robotic arm',
-    ),
-    summary: l(
-      'Garu untuk yang ingin ngulik robotika seperti di industri: komputer onboard, kamera, LiDAR, dan lengan robot. Programnya ROS 2, computer vision, pemetaan, dan navigasi otonom.',
-      'Garu is for tinkering with robotics the way industry does it: an onboard computer, a camera, LiDAR, and a robotic arm. You program it with ROS 2, computer vision, mapping, and autonomous navigation.',
-    ),
-    age: 15,
-    level: 'lanjut',
-    goals: ['lomba', 'ai'],
-    competition: l('Persiapan WRO, MakeX, dan KRI', 'Preparation for WRO, MakeX, and KRI'),
-    abilities: [
-      l('ROS 2 di komputer onboard', 'ROS 2 on an onboard computer'),
-      l('Deteksi objek dengan OpenCV dan YOLO', 'Object detection with OpenCV and YOLO'),
-      l('Pemetaan SLAM dan navigasi otonom', 'SLAM mapping and autonomous navigation'),
-      l('Lengan robot dengan capit', 'Robotic arm with gripper'),
-      l('IoT dengan MQTT', 'IoT with MQTT'),
-    ],
-    build: {
-      label: l('Rakit dan integrasi', 'Build and integrate'),
-      body: l(
-        'Rakit mekaniknya, hubungkan komputer dengan mikrokontroler, lalu satukan sensor dalam ROS 2.',
-        'Build the mechanics, connect the computer to the microcontroller, then bring the sensors together in ROS 2.',
-      ),
-    },
-    controller: 'Raspberry Pi 5 / NVIDIA Jetson Orin Nano Super',
-    programming: l('Python, C++, dan ROS 2', 'Python, C++, and ROS 2'),
-    inBox: [
-      l('Sasis rover, motor, dan lengan robot', 'Rover chassis, motors, and robotic arm'),
-      l('Komputer onboard sesuai paket', 'Onboard computer for your package'),
-      l('Kamera, LiDAR 2D, dan IMU', 'Camera, 2D LiDAR, and IMU'),
-      l('Image sistem ROS 2 siap pakai', 'A ready-made ROS 2 system image'),
-    ],
-    parts: [
-      {
-        group: l('Komputasi', 'Compute'),
-        items: [
-          l('Paket A: Raspberry Pi 5', 'Package A: Raspberry Pi 5'),
-          l('Paket B: NVIDIA Jetson Orin Nano Super', 'Package B: NVIDIA Jetson Orin Nano Super'),
-          l(
-            'Mikrokontroler ESP32 atau STM32 untuk motor',
-            'ESP32 or STM32 microcontroller for motors',
-          ),
-        ],
-      },
-      {
-        group: l('Persepsi', 'Perception'),
-        items: [
-          l('Kamera dan LiDAR 2D', 'Camera and 2D LiDAR'),
-          l('IMU dan encoder roda', 'IMU and wheel encoders'),
-        ],
-      },
-      {
-        group: l('Aktuator', 'Actuators'),
-        items: [
-          l('Sasis rover dan motor', 'Rover chassis and motors'),
-          l('Lengan robot dengan capit', 'Robotic arm with gripper'),
-        ],
-      },
-    ],
-    specs: [
-      {
-        label: l('Pengendali', 'Controller'),
-        value: l(
-          'Raspberry Pi 5 atau Jetson Orin Nano Super',
-          'Raspberry Pi 5 or Jetson Orin Nano Super',
-        ),
-      },
-      {
-        label: l('Sensor', 'Sensors'),
-        value: l('Kamera, LiDAR 2D, IMU, encoder', 'Camera, 2D LiDAR, IMU, encoders'),
-      },
-      {
-        label: l('Aktuator', 'Actuators'),
-        value: l('Rover, lengan dengan capit', 'Rover, arm with gripper'),
-      },
-      {
-        label: l('Pemrograman', 'Programming'),
-        value: l('Python, C++, ROS 2', 'Python, C++, ROS 2'),
-      },
-      {
-        label: l('Simulasi', 'Simulation'),
-        value: l('Gazebo dan RViz', 'Gazebo and RViz'),
-      },
-    ],
-    price: null,
-    options: [
-      {
-        id: 'pi5',
-        label: l('Paket A: Raspberry Pi 5', 'Package A: Raspberry Pi 5'),
-        price: 9_700_000,
-      },
-      {
-        id: 'jetson',
-        label: l('Paket B: Jetson Orin Nano Super', 'Package B: Jetson Orin Nano Super'),
-        price: 19_700_000,
-      },
-    ],
-    priceNote: l('Perkiraan, masih dikembangkan', 'Estimate, still in development'),
-    availability: 'soon',
-  },
 ];
+
+/**
+ * A robot that keeps its place in the number series while it is still being built. Nothing
+ * about it is published until it is ready, so the sites show only its number, its name, and
+ * that it is in development.
+ */
+export interface RobotInDevelopment {
+  slug: string;
+  number: number;
+  name: string;
+}
+
+export const robotsInDevelopment: readonly RobotInDevelopment[] = [
+  { slug: 'garu', number: 3, name: 'Garu' },
+];
+
+export function getRobotInDevelopment(slug: string): RobotInDevelopment | undefined {
+  return robotsInDevelopment.find((robot) => robot.slug === slug);
+}
 
 export function getRobot(slug: string): Robot | undefined {
   return robots.find((robot) => robot.slug === slug);

@@ -9,7 +9,7 @@ export interface WordmarkProps {
 
 /**
  * The brand name in Anybody, drawn as outlines, with an amber turn signal for its dot (the full
- * stop of "taksu.") that flashes three times when the logo's link is hovered or focused.
+ * stop of "DCTEdu.") that flashes three times when the logo's link is hovered or focused.
  */
 export function Wordmark({
   className,
