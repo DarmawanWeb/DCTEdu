@@ -14,16 +14,16 @@ export const faq: readonly Question[] = [
     id: 'order',
     question: l('Bagaimana cara membeli?', 'How do I buy?'),
     answer: l(
-      'Lewat Tokopedia atau Shopee kalau robotnya sudah terdaftar di sana, atau pesan langsung: masukkan ke keranjang, lalu kirim pesanan lewat WhatsApp atau email. Kami balas dengan total, ongkos kirim, dan cara bayar.',
-      'Through Tokopedia or Shopee when the robot is listed there, or order directly: add it to the cart, then send the order over WhatsApp or email. We reply with the total, shipping, and how to pay.',
+      'Ciko dan Momo dijual eksklusif oleh PT Ezra Robotics Teknologi: tombol di halaman robotnya langsung menghubungi mereka untuk harga dan pemesanan. Produk lain dipesan langsung ke kami: masukkan ke keranjang, lalu kirim pesanan lewat WhatsApp atau email, dan kami balas dengan total, ongkos kirim, dan cara bayar.',
+      'Ciko and Momo are sold exclusively by PT Ezra Robotics Teknologi: the button on each robot’s page contacts them for prices and orders. Everything else is ordered from us directly: add it to the cart, then send the order over WhatsApp or email, and we reply with the total, shipping, and how to pay.',
     ),
   },
   {
-    id: 'preorder',
-    question: l('Apa artinya pre-order?', 'What does pre-order mean?'),
+    id: 'seller',
+    question: l('Kenapa Ciko dan Momo tidak ada harganya?', 'Why do Ciko and Momo show no price?'),
     answer: l(
-      'Robot dirakit dan diuji per batch. Saat konfirmasi pesanan, kami sampaikan perkiraan tanggal kirimnya.',
-      'Robots are built and tested in batches. When we confirm your order, we tell you the expected shipping date.',
+      'Hak jual keduanya dipegang PT Ezra Robotics Teknologi sebagai penjual eksklusif, jadi harga, stok, dan pengiriman diatur langsung oleh mereka. Kami tetap menyiapkan jalur belajar dan simulatornya, gratis untuk semua.',
+      'PT Ezra Robotics Teknologi holds the right to sell both as their exclusive seller, so prices, stock, and shipping come from them directly. We still make the learning paths and the simulator, free for everyone.',
     ),
   },
   {

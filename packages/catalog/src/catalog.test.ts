@@ -12,7 +12,8 @@ import { drops, nextReleaseNumber } from './drops';
 import { faq } from './faq';
 import { getGuide, guides } from './guides';
 import { learnPaths, missionStep, stepTitle } from './learn';
-import { robots } from './robots';
+import { robots, startingPrice } from './robots';
+import { sellers } from './sellers';
 import { formatRupiah, products } from './shop';
 import { simMissions } from './sim-missions';
 
@@ -43,10 +44,15 @@ describe('catalogue', () => {
     }
   });
 
-  it('prices orderable robots, and only estimates the ones still coming', () => {
+  it('prices the robots sold here, and shows none for those an exclusive seller sells', () => {
     for (const robot of robots) {
+      if (robot.seller) {
+        expect(sellers[robot.seller], robot.slug).toBeDefined();
+        expect(startingPrice(robot), robot.slug).toBeNull();
+        continue;
+      }
       if (robot.availability === 'soon') continue;
-      expect(robot.price, robot.slug).toBeGreaterThan(0);
+      expect(startingPrice(robot), robot.slug).toBeGreaterThan(0);
     }
   });
 

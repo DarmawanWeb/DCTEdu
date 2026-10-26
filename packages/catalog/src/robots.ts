@@ -1,4 +1,5 @@
 import type { Localized } from './i18n';
+import type { SellerId } from './sellers';
 import type { Availability, MarketplaceLinks } from './shop';
 
 const l = (id: string, en: string): Localized => ({ id, en });
@@ -58,6 +59,11 @@ export interface Robot {
   priceNote?: Localized;
   availability: Availability;
   marketplace?: MarketplaceLinks;
+  /**
+   * Set when another company holds the exclusive right to sell the robot: the site then shows no
+   * price and no cart button, only who sells it and how to reach them.
+   */
+  seller?: SellerId;
   sim?: SimRobot;
 }
 
@@ -173,8 +179,9 @@ export const robots: readonly Robot[] = [
         value: l('Blok, Arduino C++', 'Blocks, Arduino C++'),
       },
     ],
-    price: 1_750_000,
-    availability: 'preorder',
+    price: null,
+    availability: 'available',
+    seller: 'ezra',
     sim: 'ciko',
   },
   {
@@ -296,8 +303,9 @@ export const robots: readonly Robot[] = [
         value: l('Blok, C++ di Arduino IDE', 'Blocks, C++ in the Arduino IDE'),
       },
     ],
-    price: 2_650_000,
-    availability: 'preorder',
+    price: null,
+    availability: 'available',
+    seller: 'ezra',
     sim: 'momo',
   },
 ];
@@ -323,6 +331,11 @@ export function getRobotInDevelopment(slug: string): RobotInDevelopment | undefi
 
 export function getRobot(slug: string): Robot | undefined {
   return robots.find((robot) => robot.slug === slug);
+}
+
+/** Whether the robot is sold here, through the cart, rather than by an exclusive seller. */
+export function soldDirectly(robot: Robot): boolean {
+  return !robot.seller;
 }
 
 /** The lowest price a robot is offered at, for "from Rp…" labels. */

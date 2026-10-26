@@ -63,6 +63,10 @@ Write the Indonesian first, then translate.
 file. It takes its slot in the number series and shows "in development" on the home grid, in the
 catalogue, and on its own page, with nothing else. When it goes on sale, move it to `robots`.
 
+**A robot an exclusive seller sells.** Give it `seller` (an id from
+`packages/catalog/src/sellers.ts`) and `price: null`. Its contact details are configured per
+seller in `apps/store/src/lib/site-config.ts` and the `NEXT_PUBLIC_<SELLER>_*` variables.
+
 **Something orderable.** It goes on sale when its availability is not `soon` and it has a price.
 The cart prices lines from the catalogue each time, so a price change needs no cart migration.
 

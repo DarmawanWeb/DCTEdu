@@ -33,15 +33,17 @@ before (or after) one arrives. In Indonesian and English.**
 Both read every name, price, age, and learning step from one catalogue in
 [`packages/catalog`](packages/catalog), and share the theme and wordmark in
 [`packages/ui`](packages/ui). There is no database and no payment: the cart turns an order into
-one message, and the reply carries the total, shipping, and how to pay. Progress in the simulator
+one message, and the reply carries the total, shipping, and how to pay. Ciko and Momo are the
+exception: PT Ezra Robotics Teknologi is their exclusive seller, so their pages show no price and
+no cart button, only a button that contacts Ezra. Progress in the simulator
 stays in the browser that made it.
 
 ## Robots
 
 | # | Robot | Status |
 |---|---|---|
-| 01 | **Ciko**: a ready-made robot car with line sensors, a distance sensor, an OLED face, and turn signals; ages 7 and up | Pre-order |
-| 02 | **Momo**: a modular robot whose sensors plug into the board and are coded without soldering, with Wi-Fi; ages 11 and up | Pre-order |
+| 01 | **Ciko**: a ready-made robot car with line sensors, a distance sensor, an OLED face, and turn signals; ages 7 and up | Sold exclusively by PT Ezra Robotics Teknologi |
+| 02 | **Momo**: a modular robot whose sensors plug into the board and are coded without soldering, with Wi-Fi; ages 11 and up | Sold exclusively by PT Ezra Robotics Teknologi |
 | 03 | **Garu** | In development |
 | ?? | The next Drop from the R&D bench | Coming soon |
 

@@ -6,5 +6,6 @@ export * from './guides';
 export * from './i18n';
 export * from './learn';
 export * from './robots';
+export * from './sellers';
 export * from './shop';
 export * from './sim-missions';
