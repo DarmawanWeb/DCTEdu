@@ -1,19 +1,8 @@
 version: 2
+# No npm updates here: Dependabot does not check out submodules, so it sees the workspace without
+# apps/store and apps/simulator and would rewrite pnpm-lock.yaml without their dependencies.
+# Update packages by hand instead (docs/development.md, "Dependencies").
 updates:
-  - package-ecosystem: npm
-    directory: /
-    schedule:
-      interval: weekly
-    groups:
-      next-react:
-        patterns: ['next', 'react', 'react-dom', '@types/react*', 'next-intl']
-      blockly:
-        patterns: ['blockly', '@blockly/*']
-      tooling:
-        patterns: ['@biomejs/biome', 'typescript*', 'vitest', 'vite', 'turbo', '@commitlint/*']
-    commit-message:
-      prefix: 'chore'
-      include: scope
   - package-ecosystem: github-actions
     directory: /
     schedule:

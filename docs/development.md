@@ -123,4 +123,20 @@ not have yet needs that call added to the library first.
 
 [ci.yml](../.github/workflows/ci.yml) runs Biome, the typechecks, the tests, and both builds on
 every push to `main` and every pull request, builds both Docker images, and on pull requests also
-runs commitlint. Dependabot opens weekly updates for npm packages and monthly ones for actions.
+runs commitlint. Dependabot opens monthly updates for the GitHub Actions and weekly ones when
+the store or the simulator has new commits.
+
+## Dependencies
+
+Dependabot does not check out submodules, so it cannot update npm packages here: it would see the
+workspace without the two apps and drop their dependencies from `pnpm-lock.yaml`. Update them by
+hand, with the submodules checked out:
+
+```bash
+pnpm outdated -r                # what is behind, in every package
+pnpm update -r --latest <name>  # one package, everywhere it is used; or leave out <name>
+pnpm check && pnpm build
+```
+
+A change to an app's `package.json` is committed in that app's repository first, then here with
+the updated `pnpm-lock.yaml` and the new submodule commit.
