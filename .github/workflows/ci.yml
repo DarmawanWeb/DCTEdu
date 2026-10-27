@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # The apps are submodules: the workspace is incomplete without them.
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           submodules: true
       - uses: pnpm/action-setup@v4
@@ -37,7 +37,7 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: pnpm/action-setup@v4
@@ -55,7 +55,7 @@ jobs:
       matrix:
         app: [store, simulator]
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           submodules: true
       - uses: docker/setup-buildx-action@v4
