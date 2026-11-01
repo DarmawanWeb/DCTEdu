@@ -7,19 +7,23 @@ const l = (id: string, en: string): Localized => ({ id, en });
  * change plus `python3 packages/ui/scripts/wordmark.py <name>` for the logo.
  */
 export const brand = {
-  name: 'DCTEdu',
-  /** The company behind the brand, for copyright and legal lines. DCT stands for its name. */
+  name: 'DCT Edu',
+  /** The company behind the brand, for copyright, legal lines and search results. DCT stands for its name. */
   company: 'PT Dharma Cipta Teknologi',
-  tagline: l('Robot untuk diulik.', 'Robots made for tinkering.'),
+  /** Other names people search for, for structured data. */
+  alternateNames: ['Dharma Cipta Teknologi', 'DCT', 'DCTEdu'],
+  tagline: l('Belajar robotika sejak dini.', 'Learn robotics from an early age.'),
   promise: l(
-    'Robot bernama dan bernomor, lengkap dengan jalur belajar online gratis.',
-    'Named, numbered robots, each with a free online learning path.',
+    'Robot edukasi untuk anak, remaja, dan tim lomba, lengkap dengan jalur belajar online gratis.',
+    'Education robots for kids, teens, and competition teams, each with a free online learning path.',
   ),
   story: l(
-    'DCTEdu adalah lini robot edukasi PT Dharma Cipta Teknologi, dirancang dan dirakit di Indonesia. Setiap robot punya nama, nomor, dan jalur belajarnya sendiri: video, panduan, dan misi simulator yang bisa diikuti dari rumah. Kami menjual satuan, menyiapkan pembelian dalam jumlah banyak untuk sekolah dan kursus, dan membuat versi OEM dengan merek Anda.',
-    'DCTEdu is the education robot line of PT Dharma Cipta Teknologi, designed and built in Indonesia. Every robot has a name, a number, and its own learning path: videos, guides, and simulator missions you can follow at home. We sell single units, handle bulk orders for schools and courses, and make OEM versions under your brand.',
+    'DCT Edu adalah lini robot edukasi PT Dharma Cipta Teknologi, dirancang dan dirakit di Bali, Indonesia. Kami percaya robotika paling mudah dipelajari sejak dini: lewat robot sungguhan yang bisa dipegang, diprogram, dan dibawa ke lomba. Setiap robot punya nama, nomor, dan jalur belajarnya sendiri, dari buka kotak sampai kode Arduino C++. Kami melayani pembelian satuan, sekolah dan kursus, serta OEM dengan merek Anda.',
+    'DCT Edu is the education robot line of PT Dharma Cipta Teknologi, designed and built in Bali, Indonesia. We believe robotics is easiest to learn early: with a real robot you can hold, program, and take to a competition. Every robot has a name, a number, and its own learning path, from opening the box to Arduino C++. We serve single buyers, schools and courses, and OEM partners under their own brand.',
   ),
   location: l('Bali, Indonesia', 'Bali, Indonesia'),
+  region: 'Bali',
+  country: 'ID',
   contact: {
     person: 'Darmawan',
     email: 'darmawandeveloper@gmail.com',

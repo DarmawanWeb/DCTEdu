@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="docs/logo.svg" width="96" alt="DCTEdu logo">
+<img src="docs/logo.svg" width="96" alt="DCT Edu logo">
 
-# DCTEdu
+# DCT Edu
 
-**Education robots you can tinker with: the store, where every robot has a name, a number, and a
+**Education robots for learning robotics from an early age: the store, where every robot has a name, a number, and a
 free learning path, and the block simulator, where students program the robots in the browser
 before (or after) one arrives. In Indonesian and English.**
 
@@ -92,6 +92,6 @@ addresses people will use, so the two apps link to each other.
 | [Simulator](https://github.com/DarmawanWeb/education-robot-sim/blob/main/docs/architecture.md) | Stack, from blocks to the engine and to C++, the robots, missions and goals, the screen, storage, configuration |
 | [Development](docs/development.md) | Setup, layout, scripts, commits, recipes for a page, a string, a robot, a mission, a block, and the brand name, design rules, CI |
 
-DCTEdu is the education robot line of PT Dharma Cipta Teknologi.
+DCT Edu is the education robot line of PT Dharma Cipta Teknologi.
 
 Proprietary. Copyright (c) 2026 PT Dharma Cipta Teknologi. All rights reserved.

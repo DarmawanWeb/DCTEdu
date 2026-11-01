@@ -43,8 +43,8 @@ export const dropSteps: ReadonlyArray<{ id: string; title: Localized; body: Loca
     id: 'reveal',
     title: l('Dibuka dengan nomor', 'Revealed with a number'),
     body: l(
-      'Saat siap, robotnya dapat nama dan nomor berikutnya di seri DCTEdu, lengkap dengan jalur belajar dan misi simulator.',
-      'When it is ready, it gets a name and the next number in the DCTEdu series, with a learning path and simulator missions.',
+      'Saat siap, robotnya dapat nama dan nomor berikutnya di seri DCT Edu, lengkap dengan jalur belajar dan misi simulator.',
+      'When it is ready, it gets a name and the next number in the DCT Edu series, with a learning path and simulator missions.',
     ),
   },
   {

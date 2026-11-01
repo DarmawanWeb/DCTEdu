@@ -1,4 +1,4 @@
-# DCTEdu: the store and the simulator, each its own small Next.js server.
+# DCT Edu: the store and the simulator, each its own small Next.js server.
 #   cp .env.example .env && docker compose up -d --build
 # The store answers on STORE_PORT (3000) and the simulator on SIMULATOR_PORT (3001). Put any
 # reverse proxy or tunnel in front of them and set the two public URLs to its addresses.

@@ -2,7 +2,7 @@
   "name": "dctedu",
   "private": true,
   "version": "1.0.0",
-  "description": "DCTEdu by PT Dharma Cipta Teknologi: the education robot store and the block simulator, with the shared packages and the Docker stack that runs them.",
+  "description": "DCT Edu by PT Dharma Cipta Teknologi: the education robot store and the block simulator, with the shared packages and the Docker stack that runs them.",
   "packageManager": "pnpm@10.28.0",
   "engines": {
     "node": ">=22.12"
