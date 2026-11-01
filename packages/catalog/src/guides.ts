@@ -64,8 +64,8 @@ export const guides: readonly Guide[] = [
         title: l('Program pertama', 'First program'),
         steps: [
           l(
-            'Buka simulator DCTEdu, pilih Ciko, lalu misi Kenalan dengan robot.',
-            'Open the DCTEdu simulator, choose Ciko, then the Meet the robot mission.',
+            'Buka simulator DCT Edu, pilih Ciko, lalu misi Kenalan dengan robot.',
+            'Open the DCT Edu simulator, choose Ciko, then the Meet the robot mission.',
           ),
           l(
             'Susun blok: tampilkan wajah senang, bunyikan bip, maju 1 detik.',
@@ -184,7 +184,7 @@ export const guides: readonly Guide[] = [
   },
   {
     slug: 'memakai-simulator',
-    title: l('Memakai simulator DCTEdu', 'Using the DCTEdu simulator'),
+    title: l('Memakai simulator DCT Edu', 'Using the DCT Edu simulator'),
     summary: l(
       'Pilih robot dan misi, susun blok, baca panel sensor, lalu lihat kode C++-nya.',
       'Pick a robot and a mission, snap blocks together, read the sensor panel, then see the C++.',
@@ -365,7 +365,7 @@ export const guides: readonly Guide[] = [
   },
   {
     slug: 'mengajar-di-kelas',
-    title: l('Memakai robot DCTEdu di kelas', 'Running a class with DCTEdu robots'),
+    title: l('Memakai robot DCT Edu di kelas', 'Running a class with DCT Edu robots'),
     summary: l(
       'Untuk pengajar sekolah, kursus, dan ekstrakurikuler: persiapan, alur satu sesi, dan penyimpanan.',
       'For school, course, and club instructors: preparation, the flow of one session, and storage.',
