@@ -1,9 +1,9 @@
 """Draws the brand name as SVG outlines in Anybody, so the logo never depends on a web font.
 
-The amber signal light is the dot of the first i, or, for a name without one (DCTEdu has none), a full stop
+The amber signal light is the dot of the first i, or, for a name without one (DCT Edu has none), a full stop
 after the name. Run it again after renaming the brand, then commit the regenerated file:
 
-    python3 packages/ui/scripts/wordmark.py DCTEdu
+    python3 packages/ui/scripts/wordmark.py "DCT Edu"
 
 Needs fontTools and brotli (pip install fonttools brotli) and `pnpm install` for the font.
 """
@@ -102,4 +102,4 @@ def main(name: str) -> None:
 
 
 if __name__ == '__main__':
-    main(sys.argv[1] if len(sys.argv) > 1 else 'DCTEdu')
+    main(sys.argv[1] if len(sys.argv) > 1 else 'DCT Edu')
