@@ -92,6 +92,15 @@ describe('learning paths', () => {
     }
   });
 
+  it('never spell out a step count, which goes stale when a step is added', () => {
+    const counted =
+      /\b(satu|dua|tiga|empat|lima|enam|tujuh|delapan|sembilan|sepuluh|sebelas|belas|puluh|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen)\b[^.]{0,12}\b(langkah|steps?)\b/i;
+    for (const path of learnPaths) {
+      expect(path.intro.id).not.toMatch(counted);
+      expect(path.intro.en).not.toMatch(counted);
+    }
+  });
+
   it('uses well-formed YouTube ids', () => {
     for (const path of learnPaths) {
       for (const step of path.steps) {
