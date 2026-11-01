@@ -47,8 +47,8 @@ export const learnPaths: readonly LearnPath[] = [
   {
     robot: 'ciko',
     intro: l(
-      'Dua belas langkah dari buka kotak sampai Ciko mengikuti garis dan memilih jalannya sendiri. Setiap langkah bisa dicoba dulu di simulator, lalu di robot.',
-      'Twelve steps from unboxing to Ciko following a line and choosing its own way. Try every step in the simulator first, then on the robot.',
+      'Dari buka kotak sampai Ciko mengikuti garis, memilih jalannya sendiri, dan siap ke arena lomba. Setiap langkah bisa dicoba dulu di simulator, lalu di robot.',
+      'From unboxing to Ciko following a line, choosing its own way, and taking on the arena. Try every step in the simulator first, then on the robot.',
     ),
     steps: [
       {
@@ -215,8 +215,8 @@ export const learnPaths: readonly LearnPath[] = [
   {
     robot: 'momo',
     intro: l(
-      'Sepuluh langkah dari merakit modul sampai proyek buatanmu sendiri: kendali motor, garis 5 sensor, radar, data lingkungan, dan Wi-Fi.',
-      'Ten steps from building the modules to a project of your own: motor control, a 5-sensor line array, radar, environment data, and Wi-Fi.',
+      'Dari merakit modul sampai proyek buatanmu sendiri: kendali motor, garis 5 sensor, radar, data lingkungan, dan Wi-Fi.',
+      'From building the modules to a project of your own: motor control, a 5-sensor line array, radar, environment data, and Wi-Fi.',
     ),
     steps: [
       {
