@@ -28,10 +28,10 @@ export const faq: readonly Question[] = [
   },
   {
     id: 'shipping',
-    question: l('Bisa kirim ke luar Bali?', 'Do you ship outside Bali?'),
+    question: l('Bisa kirim ke seluruh Indonesia?', 'Do you ship across Indonesia?'),
     answer: l(
-      'Bisa, ke seluruh Indonesia. Ongkos kirim dan perkiraan waktunya kami hitung saat konfirmasi pesanan.',
-      'Yes, anywhere in Indonesia. We work out the shipping cost and time when we confirm the order.',
+      'Bisa. Kami kirim dari Tangerang ke seluruh Indonesia. Ongkos kirim dan perkiraan waktunya kami hitung saat konfirmasi pesanan.',
+      'Yes. We ship from Tangerang to anywhere in Indonesia, and work out the cost and time when we confirm the order.',
     ),
   },
   {
