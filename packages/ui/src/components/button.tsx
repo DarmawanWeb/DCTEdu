@@ -13,8 +13,8 @@ export const buttonVariants = cva(
         /** Strong but not a purchase, e.g. "See the robot". */
         ink: 'bg-ink text-ink-foreground hover:bg-ink/85',
         outline: 'border-edge text-foreground hover:bg-surface-muted border-2 bg-transparent',
-        /** On asphalt or a robot colour. */
-        light: 'text-foreground bg-white hover:bg-white/85',
+        /** On asphalt or a robot colour, in either theme: always white with dark text. */
+        light: 'bg-white text-[#191b20] hover:bg-white/85',
         lightOutline: 'border-2 border-white/80 bg-transparent text-white hover:bg-white/10',
         ghost: 'text-foreground hover:bg-surface-muted',
         link: 'text-foreground h-auto px-0 underline decoration-primary decoration-2 underline-offset-4 hover:decoration-[3px]',

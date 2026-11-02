@@ -89,9 +89,10 @@ The cart prices lines from the catalogue each time, so a price change needs no c
 2. Add its title and brief to `packages/catalog/src/sim-missions.ts`, in the order a student
    meets it.
 3. Point a learning-path step at it (`mission:` in `packages/catalog/src/learn.ts`). The
-   simulator then shows "step n of N" and links back to that step in the store. An extra
-   challenge skips this step: mark it `extra: true` and list it after the robot's path missions;
-   the picker shows it under "Tantangan tambahan" with a star instead of a step number.
+   simulator then shows "step n of N" and links back to that step in the store. A mission off the
+   path skips this step: give it `group: 'extra'` (an extra challenge, with a star) or
+   `group: 'algo'` (algorithm practice, with braces; set `view: 'serial'` in `missions.ts` so the
+   screen shows the Serial Monitor) and list it after the robot's path missions, extras first.
 
 **A block.**
 1. Define it in `apps/simulator/src/features/blocks/definitions.ts` and add it to the toolbox of

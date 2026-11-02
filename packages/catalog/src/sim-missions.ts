@@ -7,13 +7,21 @@ export interface SimMissionInfo {
   robot: SimRobot;
   title: Localized;
   brief: Localized;
-  /** An extra challenge after the path: not a step on the learning path, open to anyone. */
-  extra?: boolean;
+  /**
+   * Missions off the learning path: extra robot challenges, or algorithm practice that only uses
+   * the Serial Monitor. Left out for a step on the path.
+   */
+  group?: SimMissionGroup;
 }
+
+export type SimMissionGroup = 'extra' | 'algo';
 
 const l = (id: string, en: string): Localized => ({ id, en });
 
-/** Path missions in the order each robot's learning path reaches them, then that robot's extras. */
+/**
+ * Path missions in the order each robot's learning path reaches them, then that robot's extra
+ * challenges, then (for Momo) the algorithm practice.
+ */
 export const simMissions: readonly SimMissionInfo[] = [
   {
     id: 'ciko-kenalan',
@@ -117,7 +125,7 @@ export const simMissions: readonly SimMissionInfo[] = [
   {
     id: 'ciko-sapa',
     robot: 'ciko',
-    extra: true,
+    group: 'extra',
     title: l('Robot penyambut', 'Greeter robot'),
     brief: l(
       'Saat tangan mendekat, Ciko tersenyum dan berbunyi bip. Saat tangannya pergi, wajahnya kembali biasa.',
@@ -127,7 +135,7 @@ export const simMissions: readonly SimMissionInfo[] = [
   {
     id: 'ciko-parkir',
     robot: 'ciko',
-    extra: true,
+    group: 'extra',
     title: l('Parkir mundur', 'Reverse parking'),
     brief: l(
       'Lewati tempat parkir, belok, lalu mundur masuk di antara dua kotak dengan lampu hazard menyala.',
@@ -137,7 +145,7 @@ export const simMissions: readonly SimMissionInfo[] = [
   {
     id: 'ciko-patroli',
     robot: 'ciko',
-    extra: true,
+    group: 'extra',
     title: l('Patroli lorong', 'Corridor patrol'),
     brief: l(
       'Jalan sampai dekat dinding, bip, lalu putar balik. Ulangi tiga kali tanpa menabrak.',
@@ -228,7 +236,7 @@ export const simMissions: readonly SimMissionInfo[] = [
   {
     id: 'momo-alarm',
     robot: 'momo',
-    extra: true,
+    group: 'extra',
     title: l('Alarm suhu', 'Temperature alarm'),
     brief: l(
       'Tulis NORMAL selama suhu wajar. Begitu lewat 30 °C, tulis PANAS dan bunyikan nada.',
@@ -238,7 +246,7 @@ export const simMissions: readonly SimMissionInfo[] = [
   {
     id: 'momo-tepuk',
     robot: 'momo',
-    extra: true,
+    group: 'extra',
     title: l('Penghitung tepukan', 'Clap counter'),
     brief: l(
       'Hitung tiga tepukan dengan variabel dan tampilkan di OLED. Setelah tepukan ketiga, bunyikan nada.',
@@ -248,11 +256,105 @@ export const simMissions: readonly SimMissionInfo[] = [
   {
     id: 'momo-ikuti',
     robot: 'momo',
-    extra: true,
+    group: 'extra',
     title: l('Ikuti tangan', 'Follow the hand'),
     brief: l(
       'Tangan bergerak maju lalu berhenti. Momo mengikutinya dengan jarak tetap, tanpa menyentuh.',
       'The hand moves ahead, then stops. Momo follows at a steady distance without touching it.',
+    ),
+  },
+  {
+    id: 'algo-halo',
+    robot: 'momo',
+    group: 'algo',
+    title: l('Halo, Serial Monitor', 'Hello, Serial Monitor'),
+    brief: l(
+      'Cetak dua baris: "Halo, dunia!", lalu namamu.',
+      'Print two lines: "Hello, world!", then your name.',
+    ),
+  },
+  {
+    id: 'algo-hitung',
+    robot: 'momo',
+    group: 'algo',
+    title: l('Hitung 1 sampai 10', 'Count from 1 to 10'),
+    brief: l(
+      'Pakai blok hitung dengan i untuk mencetak 1 sampai 10, satu angka per baris.',
+      'Use the count with i block to print 1 to 10, one number per line.',
+    ),
+  },
+  {
+    id: 'algo-mundur',
+    robot: 'momo',
+    group: 'algo',
+    title: l('Hitung mundur', 'Countdown'),
+    brief: l('Cetak 10 turun sampai 1, lalu "Meluncur!".', 'Print 10 down to 1, then "Lift off!".'),
+  },
+  {
+    id: 'algo-genap',
+    robot: 'momo',
+    group: 'algo',
+    title: l('Bilangan genap', 'Even numbers'),
+    brief: l('Cetak bilangan genap dari 2 sampai 20.', 'Print the even numbers from 2 to 20.'),
+  },
+  {
+    id: 'algo-jumlah',
+    robot: 'momo',
+    group: 'algo',
+    title: l('Jumlah 1 sampai 100', 'Add up 1 to 100'),
+    brief: l(
+      'Jumlahkan 1 + 2 + … + 100 di sebuah variabel, lalu cetak hasilnya sekali.',
+      'Add 1 + 2 + … + 100 in a variable, then print the result once.',
+    ),
+  },
+  {
+    id: 'algo-perkalian',
+    robot: 'momo',
+    group: 'algo',
+    title: l('Tabel perkalian 7', 'The 7 times table'),
+    brief: l(
+      'Cetak 7 x 1 = 7 sampai 7 x 10 = 70, satu baris per perkalian.',
+      'Print 7 x 1 = 7 through 7 x 10 = 70, one line each.',
+    ),
+  },
+  {
+    id: 'algo-fizzbuzz',
+    robot: 'momo',
+    group: 'algo',
+    title: l('FizzBuzz', 'FizzBuzz'),
+    brief: l(
+      'Cetak 1 sampai 15. Kelipatan 3 jadi Fizz, kelipatan 5 jadi Buzz, kelipatan keduanya jadi FizzBuzz.',
+      'Print 1 to 15. Multiples of 3 become Fizz, multiples of 5 Buzz, multiples of both FizzBuzz.',
+    ),
+  },
+  {
+    id: 'algo-fibonacci',
+    robot: 'momo',
+    group: 'algo',
+    title: l('Deret Fibonacci', 'Fibonacci sequence'),
+    brief: l(
+      'Cetak 10 angka pertama. Setiap angka adalah jumlah dua angka sebelumnya.',
+      'Print the first 10 numbers. Each one is the sum of the two before it.',
+    ),
+  },
+  {
+    id: 'algo-prima',
+    robot: 'momo',
+    group: 'algo',
+    title: l('Bilangan prima', 'Prime numbers'),
+    brief: l(
+      'Cetak bilangan prima dari 2 sampai 30, yaitu bilangan yang hanya habis dibagi 1 dan dirinya sendiri.',
+      'Print the primes from 2 to 30: numbers divisible only by 1 and themselves.',
+    ),
+  },
+  {
+    id: 'algo-rata',
+    robot: 'momo',
+    group: 'algo',
+    title: l('Rata-rata suhu', 'Average temperature'),
+    brief: l(
+      'Baca suhu lima kali, sekali per detik. Cetak setiap bacaan, lalu rata-ratanya.',
+      'Read the temperature five times, once a second. Print each reading, then the average.',
     ),
   },
 ];

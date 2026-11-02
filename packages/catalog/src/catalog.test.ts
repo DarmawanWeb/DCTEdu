@@ -84,7 +84,7 @@ describe('learning paths', () => {
   it('place every simulator mission on its own robot’s path, in catalogue order', () => {
     for (const robot of ['ciko', 'momo'] as const) {
       const listed = simMissions
-        .filter((mission) => mission.robot === robot && !mission.extra)
+        .filter((mission) => mission.robot === robot && !mission.group)
         .map((m) => m.id);
       const onPath = learnPaths
         .find((path) => path.robot === robot)
@@ -94,15 +94,18 @@ describe('learning paths', () => {
     }
   });
 
-  it('keep extra missions off the path and after each robot’s path missions', () => {
+  it('keep grouped missions off the path, after each robot’s path missions, extras first', () => {
     for (const robot of ['ciko', 'momo'] as const) {
       const own = simMissions.filter((mission) => mission.robot === robot);
-      const firstExtra = own.findIndex((mission) => mission.extra);
-      expect(firstExtra, robot).toBeGreaterThan(0);
-      for (const mission of own.slice(firstExtra)) {
-        expect(mission.extra, mission.id).toBe(true);
+      const firstGrouped = own.findIndex((mission) => mission.group);
+      expect(firstGrouped, robot).toBeGreaterThan(0);
+      const grouped = own.slice(firstGrouped);
+      for (const mission of grouped) {
+        expect(mission.group, mission.id).toBeDefined();
         expect(missionStep(mission.id), mission.id).toBeUndefined();
       }
+      const rank = grouped.map((mission) => (mission.group === 'extra' ? 0 : 1));
+      expect(rank, robot).toEqual([...rank].sort((a, b) => a - b));
     }
   });
 
