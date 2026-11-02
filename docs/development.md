@@ -66,7 +66,7 @@ Write the Indonesian first, then translate.
 (add it to `apps/store/scripts/social-cards.py` and run it).
 
 **A robot in development.** Add `{ slug, number, name }` to `robotsInDevelopment` in the same
-file. It takes its slot in the number series and shows "in development" on the home grid, in the
+file. It takes its slot in the number series and shows "in development" in the home line-up, in the
 catalogue, and on its own page, with nothing else. When it goes on sale, move it to `robots`.
 
 **A robot an exclusive seller sells.** Give it `seller` (an id from
@@ -89,7 +89,9 @@ The cart prices lines from the catalogue each time, so a price change needs no c
 2. Add its title and brief to `packages/catalog/src/sim-missions.ts`, in the order a student
    meets it.
 3. Point a learning-path step at it (`mission:` in `packages/catalog/src/learn.ts`). The
-   simulator then shows "step n of N" and links back to that step in the store.
+   simulator then shows "step n of N" and links back to that step in the store. An extra
+   challenge skips this step: mark it `extra: true` and list it after the robot's path missions;
+   the picker shows it under "Tantangan tambahan" with a star instead of a step number.
 
 **A block.**
 1. Define it in `apps/simulator/src/features/blocks/definitions.ts` and add it to the toolbox of
