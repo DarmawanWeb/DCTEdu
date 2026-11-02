@@ -7,11 +7,13 @@ export interface SimMissionInfo {
   robot: SimRobot;
   title: Localized;
   brief: Localized;
+  /** An extra challenge after the path: not a step on the learning path, open to anyone. */
+  extra?: boolean;
 }
 
 const l = (id: string, en: string): Localized => ({ id, en });
 
-/** Listed in the order each robot's learning path reaches them. */
+/** Path missions in the order each robot's learning path reaches them, then that robot's extras. */
 export const simMissions: readonly SimMissionInfo[] = [
   {
     id: 'ciko-kenalan',
@@ -113,6 +115,36 @@ export const simMissions: readonly SimMissionInfo[] = [
     ),
   },
   {
+    id: 'ciko-sapa',
+    robot: 'ciko',
+    extra: true,
+    title: l('Robot penyambut', 'Greeter robot'),
+    brief: l(
+      'Saat tangan mendekat, Ciko tersenyum dan berbunyi bip. Saat tangannya pergi, wajahnya kembali biasa.',
+      'When a hand comes close, Ciko smiles and beeps. When it leaves, the face goes back to normal.',
+    ),
+  },
+  {
+    id: 'ciko-parkir',
+    robot: 'ciko',
+    extra: true,
+    title: l('Parkir mundur', 'Reverse parking'),
+    brief: l(
+      'Lewati tempat parkir, belok, lalu mundur masuk di antara dua kotak dengan lampu hazard menyala.',
+      'Drive past the space, turn, then back in between two boxes with the hazard lights on.',
+    ),
+  },
+  {
+    id: 'ciko-patroli',
+    robot: 'ciko',
+    extra: true,
+    title: l('Patroli lorong', 'Corridor patrol'),
+    brief: l(
+      'Jalan sampai dekat dinding, bip, lalu putar balik. Ulangi tiga kali tanpa menabrak.',
+      'Drive up to the wall, beep, then turn around. Do it three times without touching the wall.',
+    ),
+  },
+  {
     id: 'momo-sistem',
     robot: 'momo',
     title: l('Satu sensor, satu aksi', 'One sensor, one action'),
@@ -191,6 +223,36 @@ export const simMissions: readonly SimMissionInfo[] = [
     brief: l(
       'Arena terbuka dengan garis dan rintangan untuk proyek akhir.',
       'An open arena with lines and obstacles for your final project.',
+    ),
+  },
+  {
+    id: 'momo-alarm',
+    robot: 'momo',
+    extra: true,
+    title: l('Alarm suhu', 'Temperature alarm'),
+    brief: l(
+      'Tulis NORMAL selama suhu wajar. Begitu lewat 30 °C, tulis PANAS dan bunyikan nada.',
+      'Write NORMAL while the temperature is fine. Once it passes 30 °C, write HOT and play a tone.',
+    ),
+  },
+  {
+    id: 'momo-tepuk',
+    robot: 'momo',
+    extra: true,
+    title: l('Penghitung tepukan', 'Clap counter'),
+    brief: l(
+      'Hitung tiga tepukan dengan variabel dan tampilkan di OLED. Setelah tepukan ketiga, bunyikan nada.',
+      'Count three claps with a variable and show the count on the OLED. After the third clap, play a tone.',
+    ),
+  },
+  {
+    id: 'momo-ikuti',
+    robot: 'momo',
+    extra: true,
+    title: l('Ikuti tangan', 'Follow the hand'),
+    brief: l(
+      'Tangan bergerak maju lalu berhenti. Momo mengikutinya dengan jarak tetap, tanpa menyentuh.',
+      'The hand moves ahead, then stops. Momo follows at a steady distance without touching it.',
     ),
   },
 ];
