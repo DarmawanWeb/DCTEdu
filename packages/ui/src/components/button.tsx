@@ -16,6 +16,9 @@ export const buttonVariants = cva(
         /** On asphalt or a robot colour, in either theme: always white with dark text. */
         light: 'bg-white text-[#191b20] hover:bg-white/85',
         lightOutline: 'border-2 border-white/80 bg-transparent text-white hover:bg-white/10',
+        /** On a track band, which is pale in light mode and asphalt in dark. */
+        track: 'bg-band-fg text-band hover:bg-band-fg/85',
+        trackOutline: 'border-band-fg/80 text-band-fg hover:bg-band-fg/10 border-2 bg-transparent',
         ghost: 'text-foreground hover:bg-surface-muted',
         link: 'text-foreground h-auto px-0 underline decoration-primary decoration-2 underline-offset-4 hover:decoration-[3px]',
       },
