@@ -84,7 +84,7 @@ describe('learning paths', () => {
   it('place every simulator mission on its own robot’s path, in catalogue order', () => {
     for (const robot of ['ciko', 'momo'] as const) {
       const listed = simMissions
-        .filter((mission) => mission.robot === robot && !mission.group)
+        .filter((mission) => mission.track === robot && !mission.group)
         .map((m) => m.id);
       const onPath = learnPaths
         .find((path) => path.robot === robot)
@@ -94,19 +94,33 @@ describe('learning paths', () => {
     }
   });
 
-  it('keep grouped missions off the path, after each robot’s path missions, extras first', () => {
+  it('keep extra challenges off the path, after each robot’s path missions', () => {
     for (const robot of ['ciko', 'momo'] as const) {
-      const own = simMissions.filter((mission) => mission.robot === robot);
-      const firstGrouped = own.findIndex((mission) => mission.group);
-      expect(firstGrouped, robot).toBeGreaterThan(0);
-      const grouped = own.slice(firstGrouped);
-      for (const mission of grouped) {
-        expect(mission.group, mission.id).toBeDefined();
+      const own = simMissions.filter((mission) => mission.track === robot);
+      const firstExtra = own.findIndex((mission) => mission.group === 'extra');
+      expect(firstExtra, robot).toBeGreaterThan(0);
+      for (const mission of own.slice(firstExtra)) {
+        expect(mission.group, mission.id).toBe('extra');
         expect(missionStep(mission.id), mission.id).toBeUndefined();
       }
-      const rank = grouped.map((mission) => (mission.group === 'extra' ? 0 : 1));
-      expect(rank, robot).toEqual([...rank].sort((a, b) => a - b));
     }
+  });
+
+  it('give every algorithm exercise a level, SD before SMP, and keep it off the robot paths', () => {
+    const algo = simMissions.filter((mission) => mission.track === 'algo');
+    expect(algo.length).toBeGreaterThan(0);
+    const levels = algo.map((mission) => mission.level);
+    expect(levels.every(Boolean)).toBe(true);
+    expect(levels.lastIndexOf('sd')).toBeLessThan(levels.indexOf('smp'));
+    for (const mission of algo) {
+      expect(mission.group, mission.id).toBeUndefined();
+      expect(missionStep(mission.id), mission.id).toBeUndefined();
+    }
+  });
+
+  it('name the modules to plug in for every Momo sensor project', () => {
+    for (const mission of simMissions.filter((m) => m.track === 'momo' && m.group === 'extra'))
+      expect(mission.parts?.length, mission.id).toBeGreaterThan(0);
   });
 
   it('never spell out a step count, which goes stale when a step is added', () => {

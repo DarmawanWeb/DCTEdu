@@ -90,9 +90,10 @@ The cart prices lines from the catalogue each time, so a price change needs no c
    meets it.
 3. Point a learning-path step at it (`mission:` in `packages/catalog/src/learn.ts`). The
    simulator then shows "step n of N" and links back to that step in the store. A mission off the
-   path skips this step: give it `group: 'extra'` (an extra challenge, with a star) or
-   `group: 'algo'` (algorithm practice, with braces; set `view: 'serial'` in `missions.ts` so the
-   screen shows the Serial Monitor) and list it after the robot's path missions, extras first.
+   path skips this step: give it `group: 'extra'` (an extra challenge, with a star) and list it
+   after the robot's path missions; for a sensor project, name the modules in `parts`. An
+   algorithm exercise goes on `track: 'algo'` with a `level` (`sd` or `smp`), and in
+   `missions.ts` runs on `robot: 'board'` with `view: 'serial'`.
 
 **A block.**
 1. Define it in `apps/simulator/src/features/blocks/definitions.ts` and add it to the toolbox of
