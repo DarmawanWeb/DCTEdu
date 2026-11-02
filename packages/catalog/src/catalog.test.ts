@@ -83,12 +83,26 @@ describe('learning paths', () => {
 
   it('place every simulator mission on its own robot’s path, in catalogue order', () => {
     for (const robot of ['ciko', 'momo'] as const) {
-      const listed = simMissions.filter((mission) => mission.robot === robot).map((m) => m.id);
+      const listed = simMissions
+        .filter((mission) => mission.robot === robot && !mission.extra)
+        .map((m) => m.id);
       const onPath = learnPaths
         .find((path) => path.robot === robot)
         ?.steps.flatMap((step) => (step.mission ? [step.mission] : []));
       expect(onPath, robot).toEqual(listed);
       for (const id of listed) expect(missionStep(id)?.robot).toBe(robot);
+    }
+  });
+
+  it('keep extra missions off the path and after each robot’s path missions', () => {
+    for (const robot of ['ciko', 'momo'] as const) {
+      const own = simMissions.filter((mission) => mission.robot === robot);
+      const firstExtra = own.findIndex((mission) => mission.extra);
+      expect(firstExtra, robot).toBeGreaterThan(0);
+      for (const mission of own.slice(firstExtra)) {
+        expect(mission.extra, mission.id).toBe(true);
+        expect(missionStep(mission.id), mission.id).toBeUndefined();
+      }
     }
   });
 
