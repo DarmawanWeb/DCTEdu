@@ -17,7 +17,7 @@ export function DialogContent({
 }: React.ComponentProps<typeof DialogPrimitive.Content> & { closeLabel?: string }) {
   return (
     <DialogPrimitive.Portal>
-      <DialogPrimitive.Overlay className="bg-ink/60 data-[state=open]:animate-fade-in fixed inset-0 z-50" />
+      <DialogPrimitive.Overlay className="bg-[#0b0c0f]/60 data-[state=open]:animate-fade-in fixed inset-0 z-50" />
       <DialogPrimitive.Content
         className={cn(
           'border-border bg-surface data-[state=open]:animate-pop-in fixed top-1/2 left-1/2 z-50 grid w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl border p-6 shadow-2xl',

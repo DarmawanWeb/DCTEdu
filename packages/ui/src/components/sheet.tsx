@@ -20,7 +20,7 @@ export function SheetContent({
 }: React.ComponentProps<typeof SheetPrimitive.Content> & { closeLabel?: string }) {
   return (
     <SheetPrimitive.Portal>
-      <SheetPrimitive.Overlay className="bg-ink/60 data-[state=open]:animate-fade-in fixed inset-0 z-50" />
+      <SheetPrimitive.Overlay className="bg-[#0b0c0f]/60 data-[state=open]:animate-fade-in fixed inset-0 z-50" />
       <SheetPrimitive.Content
         className={cn(
           'border-border bg-background data-[state=open]:animate-fade-in fixed inset-y-0 right-0 z-50 flex w-[min(22rem,88vw)] flex-col gap-6 border-l p-6 shadow-2xl',
